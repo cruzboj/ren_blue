@@ -1,4 +1,4 @@
-FROM python:3.12-slim AS build
+FROM python:3.13-slim AS build
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 ENV UV_PYTHON_PREFERENCE=only-system
@@ -16,7 +16,7 @@ ADD pyproject.toml ./
 
 RUN uv sync --locked --no-dev
 
-FROM python:3.12-slim AS runtime
+FROM python:3.13-slim AS runtime
 
 WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
