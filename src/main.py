@@ -16,6 +16,9 @@ from src.routes import api
 
 app.include_router(api.router)
 
+from fastapi.staticfiles import StaticFiles
+app.mount("/static", StaticFiles(directory="src/static"), name="static")
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
