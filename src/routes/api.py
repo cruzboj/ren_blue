@@ -1,6 +1,11 @@
 from fastapi import APIRouter
-from controllers.login import login
+from src.controllers.login import login
+from src.controllers.llm import llm_response
+
 router = APIRouter()
 
 # --- DB Controller ---
 router.post("/login")(login)
+
+# --- LLM Controller ---
+router.get("/message")(llm_response)
