@@ -30,4 +30,4 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 EXPOSE 8081
 
-CMD ["uvicorn", "main:app", "--app-dir", "src", "--host", "0.0.0.0", "--port", "8081"]
+CMD ["python", "-m", "uvicorn", "main:app", "--app-dir", "src", "--host", "0.0.0.0", "--port", "8081"]
