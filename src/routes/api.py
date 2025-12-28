@@ -8,4 +8,4 @@ router = APIRouter()
 router.post("/login")(login)
 
 # --- LLM Controller ---
-router.get("/message")(llm_response)
+router.post("/message/")(llm_response)
