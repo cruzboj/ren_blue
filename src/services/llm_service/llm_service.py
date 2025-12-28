@@ -21,6 +21,7 @@ def get_agent():
     agent = create_agent(
         model=model,
         tools=[web_search],
+        # streaming=True
         # checkpointer=InMemorySaver(),
     )
 
